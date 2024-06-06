@@ -1,26 +1,6 @@
 import pytest
 
 
-class User:
-    """
-    A simple User class to represent user attributes.
-    """
-
-    def __init__(self):
-        # Initialize the user with a name and a second name
-        self.name = 'Roman'
-        self.second_name = 'Sirko'
-
-
-@pytest.fixture
-def user():
-    """
-    A pytest fixture to create and provide a User instance.
-    """
-    # Create a User instance and provide it to the test
-    yield User()
-
-
 @pytest.mark.change
 def test_remove_name(user):
     """
