@@ -1,9 +1,11 @@
 import pytest
 from modules.api.clients.github import GitHub
+from modules.common.database import Database
 
 """
 This file used to configure the test environment, shared fixtures, and to organize the test structure.
 """
+
 
 class User:
     """
@@ -52,3 +54,13 @@ def github_api():
     """
     api = GitHub()  # Create a User instance and provide it to the test
     yield api
+
+
+@pytest.fixture
+def db_fixture():
+    """
+    Fixture to set up a database connection for testing
+    And using this fixture in the test_database.py.
+    """
+    db = Database()
+    yield db
