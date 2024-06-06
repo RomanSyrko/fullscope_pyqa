@@ -1,5 +1,9 @@
 import pytest
+from modules.api.clients.github import GitHub
 
+"""
+This file used to configure the test environment, shared fixtures, and to organize the test structure.
+"""
 
 class User:
     """
@@ -29,10 +33,8 @@ class User:
 
 @pytest.fixture
 def user():
-    """
-    A pytest fixture to create and provide a User instance with initialized data.
-    """
-    user = User() # Create a User instance and provide it to the test
+    """ A pytest fixture to create and provide a User instance with initialized data. """
+    user = User()  # Create a User instance and provide it to the test
     user.create()  # Set up the user data
 
     # Everything written before this yield will be executed before the test
@@ -40,3 +42,13 @@ def user():
     # Everything after it will be executed after the test
 
     user.remove()  # Clean up the user data after the test
+
+
+@pytest.fixture
+def github_api():
+    """
+    A pytest fixture to create and provide a GitHub instance with initialized data.
+    And using this fixture in the test_github_api.py.
+    """
+    api = GitHub()  # Create a User instance and provide it to the test
+    yield api
