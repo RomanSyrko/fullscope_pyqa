@@ -1,38 +1,49 @@
 import pytest
-# import time
 
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.common.by import By
 
 
 @pytest.mark.ui
 def test_check_incorrect_username():
-    # Alternative creation of an object to control the browser
-    # file_place = '/Users/romansyrko/PycharmProjects/my_first_framework/'
-    # file = 'chromedriver'
-    # driver = webdriver.Chrome(service=Service(file_place + file))
+    """
+    Alternative creation of an object to control the browser
+        file_place = '/Users/romansyrko/PycharmProjects/my_first_framework/'
+        file = 'chromedriver'
+        driver = webdriver.Chrome(service=Service(file_place + file))
+    """
 
     # Creating an object to control the browser using webdriver_manager
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
-    driver.get('https://github.com/login')  # Open the page
+    # Open the page
+    driver.get('https://github.com/login')
 
-    login_field = driver.find_element(By.ID, 'login_field')  # Find the username or email input field.
-    login_field.send_keys('romansyrko@gmail.com')  # Enter an incorrect username or email
+    # Find the username or email input field.
+    login_field = driver.find_element(By.ID, 'login_field')
 
-    password = driver.find_element(By.ID, 'password')  # Find the password input field
-    password.send_keys('password')  # Enter an incorrect password
+    # Enter an incorrect username or email
+    login_field.send_keys('romansyrko@gmail.com')
 
-    btn = driver.find_element(By.NAME, 'commit')  # Find the commit button (login button)
-    btn.click()  # Emulate a click with the left mouse button to attempt login
+    # Find the password input field
+    password = driver.find_element(By.ID, 'password')
 
-    check = driver.find_element(By.ID, 'js-flash-container')  # Find the error message container
+    # Enter an incorrect password
+    password.send_keys('password')
 
-    assert check is not None  # Check that the error message is present
+    # Find the commit button (login button) and Emulate a click with the left mouse button
+    driver.find_element(By.NAME, 'commit').click()
 
-    assert driver.title == 'Sign in to GitHub · GitHub'  # Verify that the page title is as expected
-    # time.sleep(3)  # Optionally pause to observe the result
+    # Find the error message container
+    check = driver.find_element(By.ID, 'js-flash-container')
 
-    driver.close()  # Close the browser
+    # Check that the error message is present
+    assert check is not None
+
+    # Verify that the page title is as expected
+    assert driver.title == 'Sign in to GitHub · GitHub'
+
+    # Close the browser
+    driver.close()
