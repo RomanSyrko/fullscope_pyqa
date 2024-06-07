@@ -1,6 +1,7 @@
 import pytest
 from modules.api.clients.github import GitHub
 from modules.common.database import Database
+from modules.api.clients.jsonplaceholder import JSONPlaceHolder
 
 """
 This file used to configure the test environment, shared fixtures, and to organize the test structure.
@@ -64,3 +65,12 @@ def db_fixture():
     """
     db = Database()
     yield db
+
+
+@pytest.fixture
+def json_placeholder():
+    """
+    Using this fixture in the test_jsonplaceholder.py.
+    """
+    json_placeholder = JSONPlaceHolder()
+    yield json_placeholder
