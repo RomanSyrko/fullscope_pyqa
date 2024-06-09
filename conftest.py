@@ -1,6 +1,7 @@
 import pytest
 from modules.api.clients.github import GitHub
 from modules.api.clients.rozetka import Rozetka
+from modules.api.clients.tmdb_api import TMDBClient
 from modules.api.clients.weather_api import WeatherApi
 from modules.common.database import Database
 from modules.api.clients.jsonplaceholder import JSONPlaceHolder
@@ -94,3 +95,12 @@ def weather_api():
     """
     weather = WeatherApi()
     yield weather
+
+
+@pytest.fixture
+def tmdb_api():
+    """
+    Using this fixture in the https://api.themoviedb.org/3/
+    """
+    tmdb_api = TMDBClient()
+    yield tmdb_api
