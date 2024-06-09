@@ -122,7 +122,7 @@ def test_get_detailed_orders(db_fixture):
     """
     order = db_fixture.get_detailed_orders()
 
-    assert len(order) == 1
+    assert len(order) == 2
     assert order[0][0] == 1
     assert order[0][1] == 'Sergii'
     assert order[0][2] == 'soda'
