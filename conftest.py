@@ -1,6 +1,7 @@
 import pytest
 from modules.api.clients.github import GitHub
 from modules.api.clients.rozetka import Rozetka
+from modules.api.clients.weather_api import WeatherApi
 from modules.common.database import Database
 from modules.api.clients.jsonplaceholder import JSONPlaceHolder
 
@@ -84,3 +85,12 @@ def rozetka_api():
     """
     rozetka = Rozetka()
     yield rozetka
+
+
+@pytest.fixture
+def weather_api():
+    """
+    Using this fixture in the https://api.weatherapi.com/v1/
+    """
+    weather = WeatherApi()
+    yield weather
