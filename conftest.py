@@ -1,5 +1,6 @@
 import pytest
 from modules.api.clients.github import GitHub
+from modules.api.clients.rozetka import Rozetka
 from modules.common.database import Database
 from modules.api.clients.jsonplaceholder import JSONPlaceHolder
 
@@ -74,3 +75,12 @@ def json_placeholder():
     """
     json_placeholder = JSONPlaceHolder()
     yield json_placeholder
+
+
+@pytest.fixture
+def rozetka_api():
+    """
+    Using this fixture in the https://api-seller.rozetka.com.ua/
+    """
+    rozetka = Rozetka()
+    yield rozetka
