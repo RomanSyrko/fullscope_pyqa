@@ -18,7 +18,10 @@ This project is a comprehensive testing suite for various aspects of a web appli
     │   ├── api/
     │   │   ├── clients/
     │   │   │   ├── github.py 
-    │   │   │   └── jsonplaceholder.py
+    │   │   │   ├── jsonplaceholder.py 
+    │   │   │   ├── rozetka.py 
+    │   │   │   ├── tmdb_api.py 
+    │   │   │   └── weather_api.py
     │   ├── common/
     │   │   └── database.py
     │   ├── ui/
@@ -36,7 +39,10 @@ This project is a comprehensive testing suite for various aspects of a web appli
     │   │   ├── test_fixtures.py 
     │   │   ├── test_github_api.py 
     │   │   ├── test_http.py 
-    │   │   └── test_jsonplaceholder.py
+    │   │   ├── test_jsonplaceholder.py
+    │   │   ├── test_rozetka.py
+    │   │   ├── test_tmdb.py
+    │   │   └── test_weather_api.py
     │   ├── database/
     │   │   └── test_database.py
     │   ├── ui/
@@ -52,4 +58,37 @@ This project is a comprehensive testing suite for various aspects of a web appli
     └── qa_auto_tests.db
 
 ## Installation
-To use this framework, you need to have Python 3.12.1 or higher installed.
+To use this framework, you need to have **Python 3.12.1** or higher installed.
+
+## Running Tests
+The framework uses **pytest** for running tests. Below are examples of how to run different types of tests.
+
+### Run All Tests
+To run all tests, execute the following command:
+
+    pytest
+
+### Run Tests by Marker
+You can run tests by specific markers. Here are some examples:
+
+  - #### Run API Tests:
+        pytest -m api
+
+  - #### Run JSONPlaceholder API Tests:
+        pytest -m jsonplaceholder
+
+  - #### Run Rozetka UI Tests:
+        pytest -m ui_rozetka
+
+  - #### Run Weather API Tests:
+        pytest -m weather_api
+
+  - #### Run TMDb API Tests:
+        pytest -m tmdb_api
+
+  - #### Run Database Tests:
+         pytest -m database
+
+## Notes
+Ensure the **chromedriver** executable is in your PATH or specify its location in your test setup if you are running UI tests using Selenium.
+Update the API keys and other sensitive information as needed.
