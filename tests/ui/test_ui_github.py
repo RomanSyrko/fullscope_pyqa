@@ -8,13 +8,6 @@ from selenium.webdriver.common.by import By
 
 @pytest.mark.ui
 def test_check_incorrect_username():
-    """
-    Alternative creation of an object to control the browser
-        file_place = '/Users/romansyrko/PycharmProjects/my_first_framework/'
-        file = 'chromedriver'
-        driver = webdriver.Chrome(service=Service(file_place + file))
-    """
-
     # Creating an object to control the browser using webdriver_manager
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
