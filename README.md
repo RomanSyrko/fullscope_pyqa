@@ -61,34 +61,73 @@ This project is a comprehensive testing suite for various aspects of a web appli
 To use this framework, you need to have **Python 3.12.1** or higher installed.
 
 ## Running Tests
-The framework uses **pytest** for running tests. Below are examples of how to run different types of tests.
+The framework uses `pytest` for running tests. Below are examples of how to run different types of tests.
 
 ### Run All Tests
 To run all tests, execute the following command:
-
-    pytest
+  ```commandline
+  pytest
+  ```
 
 ### Run Tests by Marker
 You can run tests by specific markers. Here are some examples:
 
-  - #### Run API Tests:
-        pytest -m api
+- #### Run API Tests:
+  ```commandline
+  pytest -m api
+  ```
 
-  - #### Run JSONPlaceholder API Tests:
-        pytest -m jsonplaceholder
+- #### Run JSONPlaceholder API Tests:
+  ```commandline
+  pytest -m jsonplaceholder
+  ```
 
-  - #### Run Rozetka UI Tests:
-        pytest -m ui_rozetka
+- #### Run Weather API Tests:
+  ```commandline
+  pytest -m weather_api
+  ```
 
-  - #### Run Weather API Tests:
-        pytest -m weather_api
+- #### Run TMDb API Tests:
+  ```commandline
+  pytest -m tmdb_api
+  ```
 
-  - #### Run TMDb API Tests:
-        pytest -m tmdb_api
+- #### Run Database Tests:
+  ```commandline
+  pytest -m database
+  ```
 
-  - #### Run Database Tests:
-         pytest -m database
+### Running UI Tests
+
+To run the UI tests in this framework, you need to have `pytest` and `selenium` installed. You can install them via pip if you haven't already:
+
+```commandline
+pip install pytest selenium
+```
+
+#### WebDriver Setup
+Make sure you have the appropriate WebDriver for your browser installed and accessible in your system's PATH. For example, if you're using Chrome, you can download the ChromeDriver from [here](https://getwebdriver.com/chromedriver).
+
+### Running UI Tests by Markers
+
+- #### Run GitHub UI Tests:
+  ```commandline
+  pytest -m ui_github
+  ```
+
+- #### Run Rozetka UI Tests:
+  ```commandline
+  pytest -m ui_rozetka
+  pytest -m ui_rozetka_basket
+  ```
+
+
+- #### Run Novaposhta UI Tests:
+  ```commandline
+  pytest -m ui_novaposhta
+  ```
+
 
 ## Notes
-Ensure the **chromedriver** executable is in your PATH or specify its location in your test setup if you are running UI tests using Selenium.
+Ensure the `chromedriver` executable is in your PATH or specify its location in your test setup if you are running UI tests using Selenium.
 Update the API keys and other sensitive information as needed.
