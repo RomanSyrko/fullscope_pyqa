@@ -1,10 +1,14 @@
 import pytest
+
 from modules.api.clients.github import GitHub
 from modules.api.clients.rozetka import Rozetka
 from modules.api.clients.tmdb_api import TMDBClient
 from modules.api.clients.weather_api import WeatherApi
 from modules.common.database import Database
 from modules.api.clients.jsonplaceholder import JSONPlaceHolder
+from modules.ui.page_objects.github_sign_in_page import SignInPage
+from modules.ui.page_objects.novaposhta_search_track_number import SearchTrackNumber
+from modules.ui.page_objects.rozetka_search import CheckBasket, SearchProduct
 
 """
 This file used to configure the test environment, shared fixtures, and to organize the test structure.
@@ -104,3 +108,59 @@ def tmdb_api():
     """
     tmdb_api = TMDBClient()
     yield tmdb_api
+
+
+@pytest.fixture
+def search_track_number_iu_novaposhta():
+    """
+    Fixture to initialize and clean up the SearchTrackNumber object.
+
+    This fixture creates an instance of the SearchTrackNumber class,
+    yields it for use in tests, and then ensures it is properly closed
+    after the test completes.
+    """
+    search_track_number = SearchTrackNumber()
+    yield search_track_number
+    search_track_number.close()
+
+
+@pytest.fixture
+def check_basket_ui_rozetka():
+    """
+    Fixture to initialize and clean up the CheckBasket object.
+
+    This fixture creates an instance of the CheckBasket class,
+    yields it for use in tests, and then ensures it is properly closed
+    after the test completes.
+    """
+    check_basket = CheckBasket()
+    yield check_basket
+    check_basket.close()
+
+
+@pytest.fixture
+def ui_rozetka_search():
+    """
+    Fixture to initialize and clean up the SearchProduct object.
+
+    This fixture creates an instance of the SearchProduct class,
+    yields it for use in tests, and then ensures it is properly closed
+    after the test completes.
+    """
+    search_product = SearchProduct()
+    yield search_product
+    search_product.close()
+
+
+@pytest.fixture
+def github_sign_in_page():
+    """
+    Fixture to initialize and clean up the SignInPage object.
+
+    This fixture creates an instance of the SignInPage class,
+    yields it for use in tests, and then ensures it is properly closed
+    after the test completes.
+    """
+    sign_in_page = SignInPage()
+    yield sign_in_page
+    sign_in_page.close()

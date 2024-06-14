@@ -6,7 +6,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 
 
-@pytest.mark.ui
+@pytest.mark.ui_github
 def test_check_incorrect_username():
     # Creating an object to control the browser using webdriver_manager
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))

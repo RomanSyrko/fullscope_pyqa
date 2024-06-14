@@ -9,7 +9,7 @@ class SearchProductConstants:
 
 
 class CheckBasketConstants:
-    URL = 'https://rozetka.com.ua/ua/apple-iphone-15-pro-max-512gb-black-titanium/p395461107/'
+    URL = 'https://rozetka.com.ua/ua/apple-iphone-15-pro-max-512gb-natural-titanium/p395461116/'
     BUTTON_XPATH = '//*[@id="#scrollArea"]/div[1]/div[2]/div/rz-product-main-info/div/div[2]/div[1]/div[3]/rz-product-buy-btn/rz-buy-button/button'
     BASKET_XPATH = '/html/body/rz-app-root/div/div/rz-header/rz-main-header/header/div/div/ul/li[8]/rz-header-cart/button'
     BASKET_BTN_XPATH = '/html/body/rz-app-root/rz-single-modal-window/div[3]/div[2]/rz-shopping-cart/div/rz-cart-purchases/ul/li/rz-cart-product/div/div[1]/rz-popup-menu/button'
