@@ -20,15 +20,16 @@ def test_check_all_users(db_fixture):
     This test retrieves all users from the database using the 'get_all_users' method of the 'db_fixture'.
     It then asserts that at least one user exists and checks the details of the first and second users.
     """
-    users = db_fixture.get_all_users()
+    users = db_fixture.get_all_users()  # Retrieve all users from the database
 
     assert len(users) > 0
     assert users[0][0] == 'Sergii'
     assert users[1][0] == 'Stepan'
-    try:
-        assert users[2][0] == 'Ivan'
-    except IndexError:
-        print('IndexError: list index out of range')
+
+    # Check that accessing the fourth user raises an IndexError
+    # This is to ensure the list does not have a fourth user
+    with pytest.raises(IndexError):
+        assert users[3][0] == 'Ivan'
 
 
 @pytest.mark.database
