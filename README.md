@@ -16,23 +16,23 @@ This project is a comprehensive testing suite for various aspects of a web appli
     │   └── config.py
     ├── modules/
     │   ├── api/
-    │   │   ├── clients/
-    │   │   │   ├── github.py 
-    │   │   │   ├── jsonplaceholder.py 
-    │   │   │   ├── rozetka.py 
-    │   │   │   ├── tmdb_api.py 
-    │   │   │   └── weather_api.py
+    │   │   └── clients/
+    │   │       ├── github.py 
+    │   │       ├── jsonplaceholder.py 
+    │   │       ├── rozetka.py 
+    │   │       ├── tmdb_api.py 
+    │   │       └── weather_api.py
     │   ├── common/
     │   │   └── database.py
-    │   ├── ui/
-    │   │   └── page_object/ 
-    │   │   │   ├── constants/
-    │   │   │   │   ├── novaposhta_constants.py
-    │   │   │   │   └── rozetka_constants.py
-    │   │   │   ├── base_page.py
-    │   │   │   ├── github_sign_in_page.py
-    │   │   │   ├── novaposhta_search_track_number.py
-    │   │   │   └── rozetka_search.py 
+    │   └── ui/
+    │       └── page_object/ 
+    │           ├── constants/
+    │           │   ├── novaposhta_constants.py
+    │           │   └── rozetka_constants.py
+    │           ├── base_page.py
+    │           ├── github_sign_in_page.py
+    │           ├── novaposhta_search_track_number.py
+    │           └── rozetka_search.py 
     ├── tests/
     │   ├── api/
     │   │   ├── test_api.py
@@ -45,11 +45,11 @@ This project is a comprehensive testing suite for various aspects of a web appli
     │   │   └── test_weather_api.py
     │   ├── database/
     │   │   └── test_database.py
-    │   ├── ui/
-    │   │   ├── test_ui_github.py
-    │   │   ├── test_ui_github_page_object.py
-    │   │   ├── test_ui_novaposhta.py
-    │   │   └── test_ui_rozetka.py
+    │   └── ui/
+    │       ├── test_ui_github.py
+    │       ├── test_ui_github_page_object.py
+    │       ├── test_ui_novaposhta.py
+    │       └── test_ui_rozetka.py
     ├── .gitignore
     ├── README.md
     ├── chromedriver
